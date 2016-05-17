@@ -6,18 +6,18 @@ RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
 # Install deepstream as an application dependency
-RUN npm install deepstream.io
+RUN npm install deepstream.io deepstream.io-storage-rethinkdb deepstream.io-msg-redis deepstream.io-cache-redis
+
+# Copy start script
+COPY start.js start.js
 
 # Link to config volume
 VOLUME [ "/etc/deepstream" ]
 
 # Define default command.
-CMD [ "node", "./node_modules/deepstream.io/start" ]
+CMD [ "node", "start" ]
 
-# Expose ports.
-
-# HTTP Port 
+# Expose HTTP Port 
 EXPOSE 6020
-
-# TCP Port 
+# Expose TCP Port 
 EXPOSE 6021
