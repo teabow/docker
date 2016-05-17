@@ -6,7 +6,7 @@ RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
 # Install deepstream as an application dependency
-RUN npm install deepstream.io
+RUN npm install deepstream.io@0.9
 
 # Link to config volume
 VOLUME [ "/etc/deepstream" ]
