@@ -13,7 +13,7 @@ RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
 # Install deepstream as an application dependency
-RUN npm install deepstream.io-provider-search-rethinkdb
+RUN npm install deepstream.io-provider-search-rethinkdb@0.1.2
 
 # Copy start script
 COPY search-provider.js search-provider.js

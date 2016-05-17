@@ -1,4 +1,4 @@
-# deepstream.io-provider-search-rethinkdb
+# deepstream.io-provider-search-rethinkdb docker file
 
 ## Supported tags and respective Dockerfile links
 
@@ -8,7 +8,7 @@
 
 A docker image for deepstream.io-provider-search-rethinkdb, used to provide real-time search querying to deepstream.
 
-## How to use this image
+### How to use this image
 
 ```bash
 docker run -d deepstreamio/deepstream.io-provider-search-rethinkdb
@@ -24,7 +24,7 @@ RETHINKDB_PORT 28015
 RETHINKDB_DATABASE deepstream
 ```
 
-## How to use with custom database / deepstream urls
+### How to use with custom database / deepstream urls
 
 ```bash
 docker run -d deepstreamio/deepstream.io-provider-search-rethinkdb -e DEEPSTREAM_HOST=localhost

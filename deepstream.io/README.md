@@ -1,4 +1,6 @@
-# Supported tags and respective Dockerfile links
+# deepstream.io docker image
+
+## Supported tags and respective Dockerfile links
 
 * 0.0.9, latest (0.0.9/Dockerfile)
 
@@ -14,7 +16,7 @@ Once configuration settings are complete, we can pass a configuration file and p
 ```bash
 docker run -d deepstreamio/deepstream.io
 ```
-## How to use your own ports
+### How to use your own ports
 
 You can map your desired ports to deepstream for both HTTP and TCP connections
 
