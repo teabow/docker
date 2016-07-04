@@ -6,20 +6,48 @@
 
 [![deepstream.io](https://imagelayers.io/badge/deepstreamio/deepstream.io:latest.svg)](https://imagelayers.io/?images=deepstreamio/deepstream.io:latest)
 
-A docker image of deepstream.io. 
-
-### Note
-Once configuration settings are complete, we can pass a configuration file and permissions as volume mappings on start or via environment settings.
+A docker image of deepstream.io.
 
 ## How to use this image
 
-```bash
-docker run -d deepstreamio/deepstream.io
-```
-### How to use your own ports
+Either download the latest image from dockerhub via
 
-You can map your desired ports to deepstream for both HTTP and TCP connections
-
-```bash
-docker run -d deepstreamio/deepstream.io-provider-search-rethinkdb -p 6021:6021 -p 6020:6020
+```shell
+docker pull deepstreamio/deepstream.io
 ```
+
+or clone this repository and build the image from the Dockerfile
+
+
+```shell
+git clone https://github.com/deepstreamIO/docker.git deepstream-docker
+cd deepstream.io-docker
+docker build -t 'deepstream' .
+```
+
+###### Create a container
+
+```shell
+docker create -t -p 6020:6020 -p 6021:6021 \
+  --name deepstream \
+  -v $(pwd)/conf:/usr/local/deepstream/conf \
+  -v $(pwd)/var:/usr/local/deepstream/var \
+  deepstream
+```
+
+###### Run the container in the foreground
+
+```shell
+docker start -ia deepstream
+```
+
+You can detach your terminal by pressing <kbd>Ctrl</kbd>+<kbd>c</kbd>.<br>
+💡 **NOTE:** Your container will continue running. You need to stop it via `docker stop deepstream`
+
+###### Create a container and run it in the background
+
+```shell
+docker start deepstream
+docker logs -f deepstream
+```
+
