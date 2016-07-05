@@ -1,23 +1,24 @@
 # Pull base image.
-FROM mhart/alpine-node:4.4.4
+FROM mhart/alpine-node:4
+
+# Install build tools to compile native npm modules
+RUN apk add --update build-base python
 
 # Create app directory
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
+RUN mkdir -p /usr/local/deepstream/conf
+WORKDIR /usr/local/deepstream
 
 # Install deepstream as an application dependency
-RUN npm install deepstream.io deepstream.io-storage-rethinkdb deepstream.io-msg-redis deepstream.io-cache-redis
+# TODO: pass version dynamically
+RUN npm install deepstream.io@1.0.0-rc.4 deepstream.io-logger-winston deepstream.io-msg-redis deepstream.io-cache-redis deepstream.io-storage-rethinkdb --production
 
-# Copy start script
-COPY start.js start.js
-
-# Link to config volume
-VOLUME [ "/etc/deepstream" ]
+# Link to volumes
+VOLUME [ "/usr/local/deepstream/conf", "/usr/local/deepstream/var" ]
 
 # Define default command.
-CMD [ "node", "start" ]
+CMD [ "node", "node_modules/.bin/deepstream"]
 
-# Expose HTTP Port 
+# Expose HTTP Port
 EXPOSE 6020
-# Expose TCP Port 
+# Expose TCP Port
 EXPOSE 6021
