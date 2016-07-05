@@ -2,7 +2,7 @@
 
 ## Supported tags and respective Dockerfile links
 
-* 0.0.9, latest (0.0.9/Dockerfile)
+* 1.0.0, latest (1.0.0/Dockerfile)
 
 [![deepstream.io](https://imagelayers.io/badge/deepstreamio/deepstream.io:latest.svg)](https://imagelayers.io/?images=deepstreamio/deepstream.io:latest)
 
