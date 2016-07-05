@@ -10,10 +10,7 @@ WORKDIR /usr/local/deepstream
 
 # Install deepstream as an application dependency
 # TODO: pass version dynamically
-RUN npm install deepstream.io@1.0.0-rc.3 deepstream.io-logger-winston --production
-
-# TODO: remove when rc 4 is released
-COPY ascii-logo.txt /usr/local/deepstream/
+RUN npm install deepstream.io@1.0.0-rc.4 deepstream.io-logger-winston --production
 
 # Link to volumes
 VOLUME [ "/usr/local/deepstream/conf", "/usr/local/deepstream/var" ]
