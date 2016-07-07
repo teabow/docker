@@ -21,7 +21,7 @@ or clone this repository and build the image from the Dockerfile
 
 ```shell
 git clone https://github.com/deepstreamIO/docker.git deepstream-docker
-cd deepstream.io-docker
+cd deepstream.io-docker/deepstream.io/1.0
 docker build -t 'deepstream' .
 ```
 
@@ -51,3 +51,15 @@ docker start deepstream
 docker logs -f deepstream
 ```
 
+###### Docker compose file
+
+You can also use a docker-compose file instead of doing these steps manually:
+- pull the image
+- create a container
+- start the container
+
+Just run:
+
+```
+docker-compose up
+```

@@ -1,4 +1,4 @@
-# deepstream.io complet backend
+# deepstream.io complete backend
 
 This little `compose.yml` file starts an awesome deepstream.io environment, including:
 
