@@ -9,8 +9,7 @@ RUN mkdir -p /usr/local/deepstream/conf
 WORKDIR /usr/local/deepstream
 
 # Install deepstream as an application dependency
-# TODO: pass version dynamically
-RUN npm install deepstream.io@1.0.0-rc.4 deepstream.io-logger-winston --production
+RUN npm install deepstream.io deepstream.io-logger-winston --production
 
 # Link to volumes
 VOLUME [ "/usr/local/deepstream/conf", "/usr/local/deepstream/var" ]
@@ -19,7 +18,7 @@ VOLUME [ "/usr/local/deepstream/conf", "/usr/local/deepstream/var" ]
 RUN cp -r /usr/local/deepstream/node_modules/deepstream.io/conf/* /usr/local/deepstream/conf
 
 # Define default command.
-CMD [ "node", "node_modules/.bin/deepstream"]
+CMD [ "node", "node_modules/.bin/deepstream" ]
 
 # Expose ports
 

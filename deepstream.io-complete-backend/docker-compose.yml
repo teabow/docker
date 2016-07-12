@@ -1,8 +1,7 @@
 version: '2'
 services:
     deepstream:
-        #build: "."
-        image: deepstreamio/deepstream.io
+        build: "."
         ports:
             - "6020:6020"
             - "6021:6021"
@@ -13,7 +12,7 @@ services:
             - redis
             - rethinkdb
     deepstream-search-provider:
-        #build: "../deepstream.io-provider-search-rethinkdb/0.1.2"
+        # build: "../deepstream.io-provider-search-rethinkdb/1.1.1"
         image: deepstreamio/deepstream.io-provider-search-rethinkdb
         environment:
             - DEEPSTREAM_HOST=deepstream

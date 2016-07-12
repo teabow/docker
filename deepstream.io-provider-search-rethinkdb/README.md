@@ -2,7 +2,7 @@
 
 ## Supported tags and respective Dockerfile links
 
-* 0.1.2, latest (0.1.2/Dockerfile)
+* 1.1.1, latest (1.1.1/Dockerfile)
 
 [![deepstream.io-provider-search-rethinkdb](https://imagelayers.io/badge/deepstreamio/deepstream.io-provider-search-rethinkdb:latest.svg)](https://imagelayers.io/?images=deepstreamio/deepstream.io-provider-search-rethinkdb:latest)
 

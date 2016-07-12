@@ -10,7 +10,7 @@ WORKDIR /usr/local/deepstream
 
 # Install deepstream as an application dependency
 # TODO: pass version dynamically
-RUN npm install deepstream.io@1.0.0-rc.4 deepstream.io-logger-winston deepstream.io-msg-redis deepstream.io-cache-redis deepstream.io-storage-rethinkdb --production
+RUN npm install deepstream.io deepstream.io-logger-winston deepstream.io-msg-redis deepstream.io-cache-redis deepstream.io-storage-rethinkdb --production
 
 # Link to volumes
 VOLUME [ "/usr/local/deepstream/conf", "/usr/local/deepstream/var" ]

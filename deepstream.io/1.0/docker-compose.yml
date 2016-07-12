@@ -9,6 +9,3 @@ services:
         volumes:
             - ./conf:/usr/local/deepstream/conf
             - ./var:/usr/local/deepstream/var
-        depends_on:
-            - redis
-            - rethinkdb
