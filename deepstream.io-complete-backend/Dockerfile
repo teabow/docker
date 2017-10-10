@@ -1,5 +1,5 @@
 # Pull base image.
-FROM mhart/alpine-node:4
+FROM mhart/alpine-node:8
 
 # Install build tools to compile native npm modules
 RUN apk add --update build-base python
